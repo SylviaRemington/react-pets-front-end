@@ -45,7 +45,8 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/pets`;
 // }
 
 // 3rd VERSION - using then
-// This does the same as a try catch block
+// This does the same as a try catch block.
+// 'then' is newer syntax and newer version
 const index = async () => {
     const res = await axios.get(BASE_URL).then(response => response.json()).catch(err => console.log(err));
 
