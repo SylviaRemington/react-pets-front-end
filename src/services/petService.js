@@ -1,6 +1,7 @@
 // touch src/services/petService.js
 // src/services/petService.js
 // ___________________________________________
+
 // IMPORTS
 
 import axios from "axios";
@@ -24,9 +25,22 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/pets`;
 // ABOVE IS THE SAME AS WRITING THE FOLLOWING:
 // const BASE_URL = `http://localhost:3000/pets`;
 
+// --------------
+
+// 1ST VERSION OF A FUNCTION THAT WOULD WORK WITH AXIOS
+// One way to do this with axios (more ways given below)
+// const index = async () => {
+//     const res = await axios.get(BASE_URL);
+//     return res.json();
+// }
+
+// Another way - with wrapping it up in a try catch
 const index = async () => {
-    const res = await axios.get(BASE_URL);
-    return res.json();
+    try {
+        const res = await axios.get(BASE_URL);
+        return res.json();
+    } catch (error) {
+        console.log(error);
+    }
+
 }
-
-
