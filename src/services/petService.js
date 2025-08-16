@@ -55,13 +55,15 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/pets`;
 //     .get(BASE_URL)
 //     .then(response => response.json())
 //     .catch(err => console.log(err));
-
 // };
 
 // ADDTL VERSION - 4TH VERSION
 // get it and handle it, and then if it breaks, console log it
+// const index = async () => {
+//     const res = await axios.get(BASE_URL).catch((e) => console.log(e));
+// };
+
+// Addtl 5th VERSION
 const index = async () => {
-    const res = await axios.get(BASE_URL).catch((e) => console.log(e));
-    };
-
-
+    return await axios.get(BASE_URL).catch((e) => console.log(e));
+};
