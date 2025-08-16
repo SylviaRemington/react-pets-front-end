@@ -69,6 +69,8 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/pets`;
 // };
 
 // MORE LIKE LESSON - going to use this function moving forward for this lesson so it is more in line with Canva GA lesson
+// Not using fetch like lesson; however, using axios and still making a get request to the base url.
+// Axios will do the passing to json. And it does handle try catch, same as the previous chained method.
 const index = async () => {
     try {
         const res = await axios.get(BASE_URL);
@@ -77,3 +79,7 @@ const index = async () => {
         console.log(error);
     }
 };
+
+console.log(await index());
+
+export { index };
