@@ -7,7 +7,7 @@ import "./App.css";
 function App () {
 
   useEffect(() => {
-
+    index();
   }, []);
 
 
