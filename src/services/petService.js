@@ -80,6 +80,6 @@ const index = async () => {
     }
 };
 
-console.log(await index());
+
 
 export { index };
