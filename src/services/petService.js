@@ -49,8 +49,16 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/pets`;
 // 'then' is newer syntax and newer version
 // But remember: axios.get is the thing that gets you your first promise. And then go from there.
 // Once that promise has resolved, then you end up wtih your response (which is after the .then). Then when you get your response, you do something with it.
-const index = async () => {
-    const res = await axios.get(BASE_URL).then(response => response.json()).catch(err => console.log(err));
+// const index = async () => {
+//     const res = await axios
+//     .get(BASE_URL)
+//     .then(response => response.json())
+//     .catch(err => console.log(err));
 
-};
+// };
+
+// ADDTL VERSION - 4TH VERSION
+const index = async () => {
+    const res = await axios.get(BASE_URL).catch((e) => console.log(e));
+    };
 
