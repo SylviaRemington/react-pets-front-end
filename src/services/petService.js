@@ -64,6 +64,16 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/pets`;
 // };
 
 // Addtl 5th VERSION
+// const index = async () => {
+//     return await axios.get(BASE_URL).catch((e) => console.log(e));
+// };
+
+// MORE LIKE LESSON - going to use this function moving forward for this lesson so it is more in line with Canva GA lesson
 const index = async () => {
-    return await axios.get(BASE_URL).catch((e) => console.log(e));
+    try {
+        const res = await axios.get(BASE_URL);
+        return res();
+    } catch (error) {
+        console.log(error);
+    }
 };
