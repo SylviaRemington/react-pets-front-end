@@ -34,13 +34,19 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/pets`;
 //     return res.json();
 // }
 
-// Another way - with wrapping it up in a try catch
-const index = async () => {
-    try {
-        const res = await axios.get(BASE_URL);
-        return res.json();
-    } catch (error) {
-        console.log(error);
-    }
+// 2nd VERSION - Another way - with wrapping it up in a try catch
+// const index = async () => {
+//     try {
+//         const res = await axios.get(BASE_URL);
+//         return res.json();
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
-}
+// 3rd VERSION - using then
+// This does the same as a try catch block
+const index = async () => {
+    const res = await axios.get(BASE_URL).then(response => response.json()).catch(err => console.log(err));
+
+};
